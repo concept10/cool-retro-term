@@ -2,3 +2,15 @@ modules = ["cpp-clang14", "nodejs-20"]
 
 [nix]
 channel = "stable-24_05"
+
+[workflows]
+runButton = "Build Qt6"
+
+[[workflows.workflow]]
+name = "Build Qt6"
+author = 41080079
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd qt6_port && qmake && make && ./cool-retro-term-qt6"
