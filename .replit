@@ -1,13 +1,34 @@
+
 run = "qmake && make && ./cool-retro-term"
 hidden = [".ccls-cache"]
 compile = "qmake && make"
+
 [nix]
 channel = "stable-23_05"
+
 [deployment]
 build = "qmake && make"
-run = "./cool-retro-term"
+run = "./cool-retro-term" 
+
 [languages]
-cpp
+cpp = 100
 
 [workflows]
 runButton = "Build"
+
+[[workflows.workflow]]
+name = "Build"
+author = 41080079
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "qmake"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "make"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "./cool-retro-term"
