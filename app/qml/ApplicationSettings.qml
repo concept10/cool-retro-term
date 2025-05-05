@@ -49,9 +49,24 @@ QtObject {
 
     property bool showTerminalSize: true
     property real windowScaling: 1.0
+    property bool darkMode: true
 
     property real fps: 20
     property bool verbose: false
+
+    onDarkModeChanged: {
+        if (darkMode) {
+            _backgroundColor = "#000000"
+            _fontColor = darkMode ? "#00ff3e" : "#000000"
+            windowOpacity = 1.0
+            ambientLight = 0.2
+        } else {
+            _backgroundColor = "#ffffff"
+            _fontColor = "#000000" 
+            windowOpacity = 0.9
+            ambientLight = 0.4
+        }
+    }
 
     property real bloomQuality: 0.5
     property real burnInQuality: 0.5

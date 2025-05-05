@@ -223,6 +223,22 @@ ColumnLayout {
                 value: appSettings.windowOpacity
                 visible: !appSettings.isMacOS
             }
+            Label {
+                text: qsTr("Window Scaling")
+            }
+            SimpleSlider {
+                width: parent.width
+                value: appSettings.windowScaling
+                onValueChanged: appSettings.windowScaling = value
+                minimumValue: 0.5
+                maximumValue: 2
+            }
+
+            CheckBox {
+                text: qsTr("Dark Mode")
+                checked: appSettings.darkMode
+                onCheckedChanged: appSettings.darkMode = checked
+            }
         }
     }
 
