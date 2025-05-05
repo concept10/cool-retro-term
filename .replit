@@ -2,6 +2,7 @@ modules = ["cpp-clang14", "nodejs-20"]
 
 [nix]
 channel = "stable-24_05"
+packages = ["htop"]
 
 [workflows]
 runButton = "Build Qt6"
