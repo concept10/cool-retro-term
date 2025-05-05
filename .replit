@@ -1,4 +1,14 @@
-modules = ["cpp-clang14", "nodejs-20"]
+
+run = "qmake && make && ./cool-retro-term"
+hidden = [".ccls-cache"]
+compile = "qmake && make"
 
 [nix]
-channel = "stable-24_05"
+channel = "stable-23_05"
+
+[deployment]
+build = "qmake && make"
+run = "./cool-retro-term"
+
+[languages]
+cpp = 100
