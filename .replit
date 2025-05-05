@@ -1,14 +1,13 @@
-
 run = "qmake && make && ./cool-retro-term"
 hidden = [".ccls-cache"]
 compile = "qmake && make"
-
 [nix]
 channel = "stable-23_05"
-
 [deployment]
 build = "qmake && make"
 run = "./cool-retro-term"
-
 [languages]
-cpp = 100
+cpp
+
+[workflows]
+runButton = "Build"
